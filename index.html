@@ -21,17 +21,35 @@
         <input type="text" id="search-field" class="form-control w-50  d-inline" placeholder="Search the book you want">
         <button type="submit" onclick="searchBook()" id="button-search" class="btn btn-primary">Search</button>
     </div>
+
+    <!-- Search Result Number -->
+    <div class="search-number">
+        <p>Item found: <span id="search-number">0</span></p>
+    </div>
+    
+
     <!-- Error Message -->
     <div>
-        <p id="error-message" class=" text-danger">Something went wrong please try again later</p>
+        <p id="error-message" class=" text-danger text-center">No result found</p>
     </div>
     <!-- Book Details -->
     <div id="meal-details" class=" w-50 mx-auto"></div>
 
     <!-- search result -->
-    <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4">
+    <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4 mx-auto">
        
     </div>
+
+    <!-- Spinner -->
+    <div class="spinner" id="spinner">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+      <!-- <div id="spinner">
+          <p>Loading...</p>
+      </div> -->
+
     <script src="js/api.js"></script>
 </body>
 
