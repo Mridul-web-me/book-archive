@@ -10,9 +10,10 @@ const searchBook = () => {
     loadBook(searchText);
     document.getElementById('search-field').value = '';
 
-    toggleSpinner('initial');
+    toggleSpinner('visible');
     document.getElementById('search-result').innerText = '';
     document.getElementById('error-message').style.display = 'none';
+
 }
 
 const loadBook = searchText => {
@@ -24,7 +25,7 @@ const loadBook = searchText => {
 
 // Display Book
 
- const displayLoad = data => {
+const displayLoad = data => {
     //  Result Number
     console.log(data);
     const numFound = data.numFound;
@@ -33,11 +34,10 @@ const loadBook = searchText => {
     const container = document.getElementById('search-result');
     container.textContent = '';
     const books = data.docs;
-    if(books.length === 0){
+    if (books.length === 0) {
         document.getElementById('error-message').style.display = 'block'
-    }
-    
-    else{
+    } 
+    else {
         books.forEach(book => {
             const div = document.createElement('div');
             div.classList.add('col');
