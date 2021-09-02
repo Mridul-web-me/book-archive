@@ -33,21 +33,18 @@ const loadBook = searchText => {
     const container = document.getElementById('search-result');
     container.textContent = '';
     const books = data.docs;
-    const imgUrl = document.getElementsByClassName('imgUrl');
     if(books.length === 0){
         document.getElementById('error-message').style.display = 'block'
     }
-    else if(imgUrl === null){
-        imgUrl = "./default.jpg"
-    }
+    
     else{
         books.forEach(book => {
             const div = document.createElement('div');
             div.classList.add('col');
             div.innerHTML = `
-                <div class="card-body">
-                <img class="border border-secondary p-3" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" alt="..." height="300px" width="300px">
-                    <h4 class="card-title">${book.title}</h4>
+                <div class="card-body border border-secondary h-100">
+                <img class="border p-3" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" alt="..." height="300px" width="300px">
+                    <h4 class="card-title py-2">${book.title}</h4>
                     <p class="card-title">Author name: ${book.author_name}</p>
                     <p class="card-title">Publisher: ${book.publisher}</p>
                     <p class="card-text"> Publish Year: ${book.first_publish_year}</p>
