@@ -46,7 +46,7 @@ const loadBook = searchText => {
             div.classList.add('col');
             div.innerHTML = `
                 <div class="card-body">
-                <img class="imgUrl" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" alt="...">
+                <img class="border border-secondary p-3" src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" alt="..." height="300px" width="300px">
                     <h4 class="card-title">${book.title}</h4>
                     <p class="card-title">Author name: ${book.author_name}</p>
                     <p class="card-title">Publisher: ${book.publisher}</p>
